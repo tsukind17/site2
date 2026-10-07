@@ -1,1 +1,144 @@
+:root {
+    --bg-header: #4A352F;
+    --bg-main: #FAF3EB;
+    --bg-card: #E4CCA9;
+    --text-header: #C99D95;
+    --text-card: #2B1D19;
+    --circle-color: #B2C4CB;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--bg-main);
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-card);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  header {
+    background-color: var(--bg-header);
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px 40px;
+  }
 
+  /* Logótipo Circular no Header */
+  .header-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Mantém o formato circular */
+    object-fit: cover; /* Faz a imagem preencher o círculo sem distorcer */
+    flex-shrink: 0;
+  }
+  
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-header);
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+  
+  /* Layout principal */
+  main {
+    flex: 1;
+    max-width: 1000px;
+    width: 900%;
+    margin: 0 auto;
+    padding: 90px 120px;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Cards dos Perfumes */
+  .card {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    padding: 24px 10px 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .img-container {
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .destaque {
+    font-weight: bold; /* ou font-weight: 700; */
+  }
+  
+  .frase-destaque {
+    font-weight: bold; /* Mantém em negrito */
+    font-family: 'Playfair Display', serif; /* Mude aqui para a fonte que quiser */
+  }
+  
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-text {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    font-weight: 500;
+    color: var(--text-card);
+    padding: 0 5px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 900px) {
+    .cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    header {
+      padding: 15px 20px;
+      gap: 15px;
+    }
+  
+    .header-circle {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.8rem;
+    }
+  
+    .cards-container {
+      grid-template-columns: 1fr;
+    }
+  }
